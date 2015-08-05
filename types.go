@@ -284,6 +284,8 @@ type ContainerInfo struct {
 		Networks    map[string]*EndpointSettings
 	}
 	SysInitPath    string
+	HostnamePath   string
+	HostsPath      string
 	ResolvConfPath string
 	Volumes        map[string]string
 	HostConfig     *HostConfig
