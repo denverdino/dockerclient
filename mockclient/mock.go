@@ -235,3 +235,8 @@ func (client *MockClient) RemoveNetwork(id string) error {
 	args := client.Mock.Called(id)
 	return args.Error(0)
 }
+
+func (client *MockClient) GetExecRC(id string, timeout int) (int, error) {
+	args := client.Mock.Called(id, timeout)
+	return 0, args.Error(0)
+}
