@@ -63,4 +63,5 @@ type Client interface {
 	ConnectNetwork(id, container string) error
 	DisconnectNetwork(id, container string, force bool) error
 	RemoveNetwork(id string) error
+	GetExecRC(id string, timeout int) (int, error)
 }
