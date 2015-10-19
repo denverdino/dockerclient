@@ -197,3 +197,7 @@ func (client *NopClient) DisconnectNetwork(id, container string, force bool) err
 func (client *NopClient) RemoveNetwork(id string) error {
 	return ErrNoEngine
 }
+
+func (client *NopClient) GetExecRC(id string, timeout int) (int, error) {
+	return 0, ErrNoEngine
+}
