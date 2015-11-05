@@ -272,21 +272,14 @@ type ContainerInfo struct {
 	Config          *ContainerConfig
 	State           *State
 	Image           string
-	NetworkSettings struct {
-		IPAddress   string `json:"IpAddress"`
-		IPPrefixLen int    `json:"IpPrefixLen"`
-		Gateway     string
-		Bridge      string
-		Ports       map[string][]PortBinding
-		Networks    map[string]*EndpointSettings
-	}
-	SysInitPath    string
-	HostnamePath   string
-	HostsPath      string
-	ResolvConfPath string
-	Volumes        map[string]string
-	HostConfig     *HostConfig
-	Node           *NodeInfo
+	NetworkSettings NetworkSettings
+	SysInitPath     string
+	HostnamePath    string
+	HostsPath       string
+	ResolvConfPath  string
+	Volumes         map[string]string
+	HostConfig      *HostConfig
+	Node            *NodeInfo
 }
 
 type ContainerChanges struct {
