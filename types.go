@@ -323,6 +323,7 @@ type Container struct {
 	Id              string
 	Names           []string
 	Image           string
+	ImageID         string
 	Command         string
 	Created         int64
 	Status          string
@@ -333,11 +334,6 @@ type Container struct {
 	NetworkSettings struct {
 		Networks map[string]EndpointSettings
 	}
-}
-
-type Actor struct {
-	ID         string
-	Attributes map[string]string
 }
 
 type Event struct {
