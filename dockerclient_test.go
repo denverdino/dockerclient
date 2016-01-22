@@ -38,7 +38,7 @@ func ExampleDockerClient_AttachContainer() {
 		panic(err)
 	}
 	cID, err := docker.CreateContainer(&ContainerConfig{
-		Cmd:   []string{"echo", "hi"},
+		Cmd:   NewCommand("echo", "hi"),
 		Image: "busybox",
 	}, "", nil)
 	if err != nil {
