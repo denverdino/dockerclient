@@ -19,18 +19,6 @@ type NetworkSettings struct {
 	IsAnonymousEndpoint    bool
 }
 
-// EndpointSettings stores the network endpoint details
-type EndpointSettings struct {
-	EndpointID          string
-	Gateway             string
-	IPAddress           string
-	IPPrefixLen         int
-	IPv6Gateway         string
-	GlobalIPv6Address   string
-	GlobalIPv6PrefixLen int
-	MacAddress          string
-}
-
 // Address represents an IP address
 type Address struct {
 	Addr      string
