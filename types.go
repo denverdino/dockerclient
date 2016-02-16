@@ -259,11 +259,14 @@ type ImageInfo struct {
 }
 
 type Mount struct {
+	Name          string
 	Source        string
 	Destination   string
+	Driver        string
 	Mode          string
 	RW            bool
 }
+
 type ImageSearch struct {
 	Description string `json:"description,omitempty" yaml:"description,omitempty"`
 	IsOfficial  bool   `json:"is_official,omitempty" yaml:"is_official,omitempty"`
