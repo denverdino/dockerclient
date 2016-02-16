@@ -258,6 +258,12 @@ type ImageInfo struct {
 	VirtualSize     int64
 }
 
+type Mount struct {
+	Source        string
+	Destination   string
+	Mode          string
+	RW            bool
+}
 type ImageSearch struct {
 	Description string `json:"description,omitempty" yaml:"description,omitempty"`
 	IsOfficial  bool   `json:"is_official,omitempty" yaml:"is_official,omitempty"`
@@ -284,6 +290,7 @@ type ContainerInfo struct {
 	Volumes         map[string]string
 	HostConfig      *HostConfig
 	Node            *NodeInfo
+	Mounts          []Mount
 }
 
 type ContainerChanges struct {
