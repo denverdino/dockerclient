@@ -221,8 +221,8 @@ func (client *MockClient) CreateNetwork(config *dockerclient.NetworkCreate) (*do
 	return args.Get(0).(*dockerclient.NetworkCreateResponse), args.Error(1)
 }
 
-func (client *MockClient) ConnectNetwork(id, container string) error {
-	args := client.Mock.Called(id, container)
+func (client *MockClient) ConnectNetwork(id, container string, config *dockerclient.EndpointSettings) error {
+	args := client.Mock.Called(id, container, config)
 	return args.Error(0)
 }
 

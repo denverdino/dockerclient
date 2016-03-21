@@ -60,7 +60,7 @@ type Client interface {
 	ListNetworks(filters string) ([]*NetworkResource, error)
 	InspectNetwork(id string) (*NetworkResource, error)
 	CreateNetwork(config *NetworkCreate) (*NetworkCreateResponse, error)
-	ConnectNetwork(id, container string) error
+	ConnectNetwork(id, container string, config *EndpointSettings) error
 	DisconnectNetwork(id, container string, force bool) error
 	RemoveNetwork(id string) error
 	GetExecRC(id string, timeout int) (int, error)

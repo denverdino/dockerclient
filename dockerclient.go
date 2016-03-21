@@ -995,8 +995,11 @@ func (client *DockerClient) CreateNetwork(config *NetworkCreate) (*NetworkCreate
 	return ret, nil
 }
 
-func (client *DockerClient) ConnectNetwork(id, container string) error {
-	data, err := json.Marshal(NetworkConnect{Container: container})
+func (client *DockerClient) ConnectNetwork(id, container string, config *EndpointSettings) error {
+	data, err := json.Marshal(NetworkConnect{
+		Container:      container,
+		EndpointConfig: config,
+	})
 	if err != nil {
 		return err
 	}

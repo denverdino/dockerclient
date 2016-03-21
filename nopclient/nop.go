@@ -186,7 +186,7 @@ func (client *NopClient) CreateNetwork(config *dockerclient.NetworkCreate) (*doc
 	return nil, ErrNoEngine
 }
 
-func (client *NopClient) ConnectNetwork(id, container string) error {
+func (client *NopClient) ConnectNetwork(id, container string, config *dockerclient.EndpointSettings) error {
 	return ErrNoEngine
 }
 
