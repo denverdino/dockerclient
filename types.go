@@ -45,7 +45,7 @@ type ContainerConfig struct {
 	HostConfig HostConfig
 
 	// Network configuration support
-	NetworkingConfig NetworkingConfig
+	NetworkingConfig *NetworkingConfig
 }
 
 type HostConfig struct {
@@ -256,12 +256,12 @@ type ImageInfo struct {
 }
 
 type Mount struct {
-	Name          string
-	Source        string
-	Destination   string
-	Driver        string
-	Mode          string
-	RW            bool
+	Name        string
+	Source      string
+	Destination string
+	Driver      string
+	Mode        string
+	RW          bool
 }
 
 type ImageSearch struct {
@@ -643,7 +643,8 @@ type NetworkCreateResponse struct {
 
 // NetworkConnect represents the data to be used to connect a container to the network
 type NetworkConnect struct {
-	Container string
+	Container      string
+	EndpointConfig *EndpointSettings `json:",omitempty"`
 }
 
 // NetworkDisconnect represents the data to be used to disconnect a container from the network
