@@ -16,6 +16,7 @@ type Client interface {
 	CreateContainer(config *ContainerConfig, name string, authConfig *AuthConfig) (string, error)
 	ContainerLogs(id string, options *LogOptions) (io.ReadCloser, error)
 	ContainerChanges(id string) ([]*ContainerChanges, error)
+	UpdateContainer(id string, updateConfig *UpdateConfig) error
 	// ContainerStats takes a container ID and an optional stop channel and
 	// returns a StatsOrError channel. If an error is ever sent, then no
 	// more stats will be sent on that channel. If a stop channel is
