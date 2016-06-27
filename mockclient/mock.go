@@ -240,3 +240,8 @@ func (client *MockClient) GetExecRC(id string, timeout int) (int, error) {
 	args := client.Mock.Called(id, timeout)
 	return 0, args.Error(0)
 }
+
+func (client *MockClient) UpdateContainer(id string, updateConfig *dockerclient.UpdateConfig) error {
+	args := client.Mock.Called(id, updateConfig)
+	return args.Error(0)
+}
