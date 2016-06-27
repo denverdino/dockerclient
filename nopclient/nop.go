@@ -201,3 +201,7 @@ func (client *NopClient) RemoveNetwork(id string) error {
 func (client *NopClient) GetExecRC(id string, timeout int) (int, error) {
 	return 0, ErrNoEngine
 }
+
+func (client *NopClient) UpdateContainer(id string, updateConfig *dockerclient.UpdateConfig) error {
+	return ErrNoEngine
+}
